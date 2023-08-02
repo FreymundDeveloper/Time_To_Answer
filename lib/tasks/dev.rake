@@ -8,7 +8,8 @@ namespace :dev do
       show_spinner("Apagando") { %x(rails db:drop:_unsafe) }
       show_spinner("Criando") { %x(rails db:create) }
       show_spinner("Migrando") { %x(rails db:migrate) }
-      show_spinner("Criandando ADM") { %x(rails dev:add_default_admin) }
+      show_spinner("Criandando o ADM") { %x(rails dev:add_default_admin) }
+      show_spinner("Criandando mais ADMs") { %x(rails dev:add_extra_admins) }
       show_spinner("Criandando Usuário") { %x(rails dev:add_default_user) }
     else
       puts "Ambiente DEV requerido."
@@ -22,6 +23,17 @@ namespace :dev do
       password: DEFAULT_PASS,
       password_confirmation: DEFAULT_PASS
     )
+  end
+
+  desc "Popula o armazenamento de administradores"
+  task add_extra_admins: :environment do
+    5.times do |i|
+      Admin.create!(
+        email: Faker::Internet.email,
+        password: DEFAULT_PASS,
+        password_confirmation: DEFAULT_PASS
+      )
+    end
   end
 
   desc "Adiciona o usuário padrão"
