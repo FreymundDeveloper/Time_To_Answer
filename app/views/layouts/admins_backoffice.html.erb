@@ -101,11 +101,11 @@
     <% if notice %>
         <%= javascript_tag do %>
             $.bootstrapGrowl('<%= notice %>', {
-                type: 'success',
-                aling: 'right',
-                allow_dismiss: true,
-                stackup_spacing: 10
-            })
+            type: 'success',
+            aling: 'right',
+            allow_dismiss: true,
+            stackup_spacing: 10
+            });
         <% end %>
     <% end %>
 

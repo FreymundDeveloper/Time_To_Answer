@@ -11,7 +11,7 @@
                 <th>#</th>
                 <th>Email</th>
                 <th>
-                    <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle"%>
+                    <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle" do %>
                         <i class="fa fa-plus"></i>
                     <% end %>
                 </th>
@@ -20,14 +20,14 @@
         <tbody>
             <% @admins.each do |admin| %>
                 <tr>
-                    <td><% admin.id %></td>
-                    <td><% admin.email %></td>
+                    <td><%= admin.id %></td>
+                    <td><%= admin.email %></td>
                     <td style="width: 100px">
-                        <%= link_to edit_admins_welcome_admin_path(admin), class:"btn btn-primary btn-circle" do %>
+                        <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %>
                             <i class="fa fa-edit"></i>
                         <% end %>
 
-                        <button type="button" class="btn btn-success btn-circle">
+                        <button type="button" class="btn btn-danger btn-circle">
                             <i class="fa fa-minus"></i>
                         </button>
                     </td>

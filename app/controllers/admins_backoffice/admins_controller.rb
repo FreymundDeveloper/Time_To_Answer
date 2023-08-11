@@ -15,7 +15,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def create
-    @admin = @admin.new(params_admin)
+    @admin = Admin.new(params_admin)
     if @admin.save
       redirect_to admins_backoffice_admins_path, notice: "Adminstrador cadastrado"
     else
@@ -34,7 +34,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   private
 
   def params_admin
-    params.require(:admin).permit(:email, :password, :password_confirm)
+    params.require(:admin).permit(:email, :password, :password_confirmation)
   end
 
   def set_admin
@@ -42,8 +42,8 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def verify_password
-    if params[:admin][:password].blank? && params[:admin][:password_confirm].blank?
-      params[:admin].extract!(:password, :password_confirm)
+    if params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+      params[:admin].extract!(:password, :password_confirmation)
     end
   end
 

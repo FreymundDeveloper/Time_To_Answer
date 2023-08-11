@@ -12,7 +12,7 @@
         id: Código
         email: Email
         password: Senha
-        password_confirm: Confirmar Senha
+        password_confirmation: Confirmar Senha
         created_at: Criado em
         update_at: Atualizado em
       user:
