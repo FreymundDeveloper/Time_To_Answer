@@ -13,6 +13,7 @@ namespace :dev do
       show_spinner("Criandando mais ADMs") { %x(rails dev:add_extra_admins) }
       show_spinner("Criandando Usuário") { %x(rails dev:add_default_user) }
       show_spinner("Cadastrando Assuntos") { %x(rails dev:add_subjects) }
+      show_spinner("Cadastrando Questões e Resposntas") { %x(rails dev:add_answers_and_questions) }
     else
       puts "Ambiente DEV requerido."
     end
@@ -54,6 +55,18 @@ namespace :dev do
 
     File.open(file_path, 'r').each do |line|
       Subject.create!(description: line.strip)
+    end
+  end
+
+  desc "Adiciona perguntas e respostas"
+  task add_answers_and_questions: :environment do
+    Subject.all.each do |subject|
+      rand(5..10).times do |i|
+      Question.create!(
+          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+          subject: subject
+        )
+      end
     end
   end
 
