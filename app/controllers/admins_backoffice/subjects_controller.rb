@@ -47,5 +47,5 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
       @subject = Subject.find(params[:id])
     end
   
-  end
+end
   
