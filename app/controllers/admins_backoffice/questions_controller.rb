@@ -35,6 +35,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
             redirect_to admins_backoffice_questions_path, notice: "Questão excluída"
         else
             render :index
+        end
     end
 
     private
