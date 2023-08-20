@@ -4,3 +4,10 @@
     editing: Editando %{model}
     new: Novo %{model}
     confirm_with: Confirmar Exclução?
+  placeholders:
+    insert:
+      email: Inserir email
+      password: Inserir senha
+      description: Inserir descrição
+    confirm:
+      password: Confirmar senha
