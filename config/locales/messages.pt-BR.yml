@@ -1,4 +1,6 @@
 'pt-BR':
   messages:
     listing: Listando %{model}
+    editing: Editando %{model}
+    new: Novo %{model}
     confirm_with: Confirmar Exclução?
