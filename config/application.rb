@@ -15,5 +15,8 @@ module TimeToAnswer
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    #Vagrant web onsole
+    #config.web_console.whitelisted_ips = '[IP]'
   end
 end
