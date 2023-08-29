@@ -26,7 +26,7 @@
             <% flash.each do |key, value| %>
                 <%= javascript_tag do %>
                     $.bootstrapGrowl('<%= value %>', {
-                    type: 'success',
+                    type: 'danger',
                     aling: 'right',
                     allow_dismiss: true,
                     stackup_spacing: 10
