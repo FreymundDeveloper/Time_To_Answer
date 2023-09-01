@@ -1,0 +1,16 @@
+var button_element = document.getElementById('submit_<%= @answer.question_id %>'),
+    description_element = document.getElementById('description_<%= @answer.id %>'),
+    radio_button_element = document.getElementById('answer_id_<%= @answer.id %>')
+    
+button_element.classList.remove('btn-default');
+button_element.classList.remove('btn-success');
+button_element.classList.remove('btn-danger');
+
+if(<%= @answer.correct %>) {
+    button_element.classList.add('btn-success');
+    description_element.style.color = "green";
+} else {
+    button_element.classList.add('btn-danger');
+    description_element.style.color = "red";
+    radio_button_element.disabled = true
+}

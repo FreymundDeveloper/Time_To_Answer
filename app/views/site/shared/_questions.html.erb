@@ -7,7 +7,7 @@
 </div>
 
 <% @questions.each do |question| %>
-    <%= form_with url: site_answer_path, local: true do |form| %>
+    <%= form_with url: site_answer_path do |form| %>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><%= question.description %></h3>
@@ -19,15 +19,15 @@
                         <li style="list-style:none;" >
                             <div class="radio">
                                 <label>
-                                    <%= radio_button_tag 'answer_id', answer.id %>
-                                    <%= answer.description %>
+                                    <%= radio_button_tag 'answer_id', answer.id, false, disabled: false %>
+                                    <%= content_tag :p, answer.description, id:"description_#{answer.id}" %>
                                 </label>
                             </div>
                         </li>
                     <% end %>
 
                     <li style="list-style:none;" >
-                        <%= form.submit "Check", class:"btn btn-default" %>
+                        <%= form.submit "Check", class:"btn btn-default", id:"submit_#{question.id}" %>
                     </li>
                 </ul>
             </div>
