@@ -9,8 +9,22 @@ button_element.classList.remove('btn-danger');
 if(<%= @answer.correct %>) {
     button_element.classList.add('btn-success');
     description_element.style.color = "green";
+
+    $.bootstrapGrowl('Right', {
+        type: 'success',
+        aling: 'right',
+        allow_dismiss: true,
+        stackup_spacing: 10
+    });
 } else {
     button_element.classList.add('btn-danger');
     description_element.style.color = "red";
     radio_button_element.disabled = true
+
+    $.bootstrapGrowl('Wrong', {
+        type: 'danger',
+        aling: 'right',
+        allow_dismiss: true,
+        stackup_spacing: 10
+    });
 }
