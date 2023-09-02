@@ -42,9 +42,9 @@
 
             <ul class="nav navbar-nav navbar-right">
               <% unless user_signed_in? %>
-                <li><%= link_to 'Sing In', new_user_session_path %></li>
+                <li><%= link_to 'Log In', new_user_session_path %></li>
                 
-                <li><%= link_to 'Log In', new_user_registration_path %></li>
+                <li><%= link_to 'Sing In', new_user_registration_path %></li>
 
               <% else %>
                 <li class="dropdown">
