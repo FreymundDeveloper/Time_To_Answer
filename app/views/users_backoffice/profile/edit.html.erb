@@ -46,24 +46,6 @@
                         </div>
                     </div>
 
-                    <%= javascript_tag do %>
-                        var lebels = document.querySelectorAll('div#gender label');
-
-                        labels.forEach((label) => {
-                            label.addEventListener('click', () => {
-                                label.classList.remove('btn-default');
-                                label.classList.add('btn-primary');
-
-                                labels.forEach((lbl) => {
-                                    if(lbl !== label){
-                                        lbl.classList.remove('btn-primary');
-                                        lbl.classList.add('btn-default');
-                                    };
-                                });
-                            });
-                        });
-                    <% end %>
-
                     <%= form.fields_for :user_profile do |profile_form| %>
                         <div class="form-group">
                             <%= profile_form.label :address, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
@@ -86,6 +68,24 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <%= javascript_tag do %>
+                            var labels = document.querySelectorAll('div#gender label');
+
+                            labels.forEach((label) => {
+                                label.addEventListener('click', () => {
+                                    label.classList.remove('btn-default');
+                                    label.classList.add('btn-primary');
+
+                                    labels.forEach((lbl) => {
+                                        if(lbl !== label){
+                                            lbl.classList.remove('btn-primary');
+                                            lbl.classList.add('btn-default');
+                                        };
+                                    });
+                                });
+                            });
+                        <% end %>
 
                         <div class="form-group">
                             <%= profile_form.label :birthdate, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
