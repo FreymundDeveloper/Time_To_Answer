@@ -31,4 +31,4 @@
 /config/master.key
 
 # Ignore libraries containing templates
-#/public/templates
+/public/templates
