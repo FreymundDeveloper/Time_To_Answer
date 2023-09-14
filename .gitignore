@@ -32,3 +32,5 @@
 
 # Ignore libraries containing templates
 /public/templates
+
+/config/database.yml
