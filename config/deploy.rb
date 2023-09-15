@@ -23,6 +23,19 @@ set :log_level, :debug
 # Default value for :pty is false
 # set :pty, true
 
+namespace :deploy do
+    desc 'Precompile assets'
+    task :precompile do
+      on roles(:web) do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            execute :rake, 'assets:precompile'
+          end
+        end
+      end
+    end
+  end  
+
 set :assets_roles, [:web, :app]
 
 set :rails_assets_groups, :assets
