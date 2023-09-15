@@ -23,42 +23,13 @@ set :log_level, :debug
 # Default value for :pty is false
 # set :pty, true
 
-namespace :deploy do
-    desc 'Precompile assets'
-    task :precompile do
-        on roles(:web) do
-            within release_path do
-                with rails_env: fetch(:rails_env) do
-                    execute :rake, 'assets:precompile'
-                end
-            end
-        end
-    end
-end
-
-before 'deploy:updated', 'deploy:precompile'
-  
-
-set :assets_roles, [:web, :app]
-
-set :rails_assets_groups, :assets
-
-set :assets_prefix, 'prepackaged-assets'
-
-set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
-
-set :assets_manifests, ['app/assets/config/manifest.js']
-
-set :keep_assets, 2
-
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
 append :linked_files, "config/database.yml", 'config/master.key'
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
-# append :linked_dirs, "storage", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system" #, "tmp/webpacker", "vendor"
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, "storage", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system" #, "tmp/webpacker", "vendor"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
