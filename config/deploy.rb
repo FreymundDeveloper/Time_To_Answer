@@ -25,6 +25,8 @@ set :log_level, :debug
 
 set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
 
+set :assets_manifests, ['app/assets/config/manifest.js']
+
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
 append :linked_files, "config/database.yml", 'config/master.key'
