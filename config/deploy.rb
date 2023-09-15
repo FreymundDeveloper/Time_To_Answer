@@ -23,9 +23,17 @@ set :log_level, :debug
 # Default value for :pty is false
 # set :pty, true
 
+set :assets_roles, [:web, :app]
+
+set :rails_assets_groups, :assets
+
+set :assets_prefix, 'prepackaged-assets'
+
 set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
 
 set :assets_manifests, ['app/assets/config/manifest.js']
+
+set :keep_assets, 2
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
