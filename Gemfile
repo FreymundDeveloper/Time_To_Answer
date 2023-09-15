@@ -46,8 +46,8 @@ gem 'cocoon'
 gem "image_processing", ">= 1.2"
 
 # JQuery config gems
-gem 'jquery-rails'
-# gem 'rails-ujs'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-ujs', '~> 0.1.0'
 
 
 group :development, :test do
