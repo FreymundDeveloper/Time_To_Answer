@@ -8,6 +8,9 @@ set :repo_url, "https://github.com/FreymundDeveloper/Time_To_Answer.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, 'master'
 
+set :stage, :production
+set :rails_env, 'production'
+
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/timetoanswer"
 
@@ -22,6 +25,20 @@ set :log_level, :debug
 
 # Default value for :pty is false
 # set :pty, true
+
+namespace :deploy do
+    desc 'Install Node.js dependencies'
+    task :install_node_dependencies do
+        on roles(:app) do
+            within release_path do
+                execute :yarn, 'install --production' 
+            end
+        end
+    end
+  
+    before 'deploy:assets:precompile', 'deploy:install_node_dependencies'
+end
+  
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
