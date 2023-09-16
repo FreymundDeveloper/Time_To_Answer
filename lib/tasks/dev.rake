@@ -9,14 +9,16 @@ namespace :dev do
       show_spinner("Apagando") { %x(rails db:drop:_unsafe) }
       show_spinner("Criando") { %x(rails db:create) }
       show_spinner("Migrando") { %x(rails db:migrate) }
-      show_spinner("Criandando o ADM") { %x(rails dev:add_default_admin) }
-      show_spinner("Criandando mais ADMs") { %x(rails dev:add_extra_admins) }
-      show_spinner("Criandando Usuário") { %x(rails dev:add_default_user) }
-      show_spinner("Cadastrando Assuntos") { %x(rails dev:add_subjects) }
-      show_spinner("Cadastrando Questões e Respostas") { %x(rails dev:add_answers_and_questions) }
-    else
-      puts "Ambiente DEV requerido."
     end
+
+    show_spinner("Criandando o ADM") { %x(rails dev:add_default_admin) }
+    show_spinner("Criandando mais ADMs") { %x(rails dev:add_extra_admins) }
+    show_spinner("Criandando Usuário") { %x(rails dev:add_default_user) }
+    show_spinner("Cadastrando Assuntos") { %x(rails dev:add_subjects) }
+    show_spinner("Cadastrando Questões e Respostas") { %x(rails dev:add_answers_and_questions) }
+    #else
+      #puts "Ambiente DEV requerido."
+    #end
   end
 
   desc "Adiciona o administrador padrão"
