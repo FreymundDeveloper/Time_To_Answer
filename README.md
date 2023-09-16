@@ -8,7 +8,7 @@ Specifications:
 
 * Rails version: 5.2.0
 
-* Database used: SqLite
+* Database used: SqLite and MySQL
 
 * Front-End: Bootstrap 3.3.7
 
