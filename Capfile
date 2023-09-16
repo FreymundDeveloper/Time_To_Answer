@@ -35,5 +35,8 @@ require "capistrano/rails"
 #require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 
+# Unicorn config - Disabled because the NGINX Configs file is not available.
+#require 'capistrano3/unicorn'
+
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
