@@ -18,5 +18,6 @@ module TimeToAnswer
 
     #Vagrant web onsole
     #config.web_console.whitelisted_ips = '[IP]'
+    config.assets.paths << Rails.root.join('node_modules', 'bootstrap', 'fonts')
   end
 end
