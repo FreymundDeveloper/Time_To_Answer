@@ -64,7 +64,6 @@ set :keep_releases, 5
 after 'deploy:finished', 'deploy:restart'
 namespace :deploy do
     task :restart do
-        invoke 'unicorn:stop'
-        invoke 'unicorn:start'
+        invoke 'unicorn:restart'
     end
 end
