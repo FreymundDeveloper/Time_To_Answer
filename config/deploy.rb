@@ -61,10 +61,10 @@ set :keep_releases, 5
 # set :ssh_options, verify_host_key: :secure
 
 # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
-#after 'deploy:finished', 'deploy:restart'
-#namespace :deploy do
-#    task :restart do
-#        invoke 'unicorn:stop'
-#        invoke 'unicorn:start'
-#    end
-#end
+after 'deploy:finished', 'deploy:restart'
+namespace :deploy do
+    task :restart do
+        invoke 'unicorn:stop'
+        invoke 'unicorn:start'
+    end
+end
