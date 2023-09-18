@@ -35,6 +35,13 @@ namespace :deploy do
             end
         end
     end
+
+    # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
+    desc 'Restart Unicorn'
+    task :restart do
+        invoke 'unicorn:stop'
+        invoke 'unicorn:start'
+    end
   
     before 'deploy:assets:precompile', 'deploy:install_node_dependencies'
 end
@@ -61,9 +68,4 @@ set :keep_releases, 5
 # set :ssh_options, verify_host_key: :secure
 
 # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
-after 'deploy:finished', 'deploy:restart'
-namespace :deploy do
-    task :restart do
-        invoke 'unicorn:restart'
-    end
-end
+after 'deploy:publishing', 'deploy:restart'

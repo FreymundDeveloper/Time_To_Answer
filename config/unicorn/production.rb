@@ -23,4 +23,4 @@ listen '/tmp/timetoanswer.soak', back: 64
 # 3 -> Run from "vagrant@ubuntu-bionic:/vagrant/time_to_answer$":
 # bundle install
 # bundle exec cap production deploy
-# sudo systemctl nginx restart
+# sudo systemctl restart nginx
