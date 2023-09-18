@@ -1,6 +1,6 @@
 # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
 
-root = "var/www/timetoanswer/current"
+root = "/var/www/timetoanswer/current"
 working_directory root
 
 pid "#{root}/tmp/pids/unicorn.pid"
