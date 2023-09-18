@@ -44,7 +44,6 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'cocoon'
 gem "image_processing", ">= 1.2"
-gem 'rails-ujs'
 gem 'font-awesome-rails'
 
 group :development, :test do
