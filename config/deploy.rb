@@ -34,7 +34,7 @@ namespace :deploy do
     task :set_git_safe_directory do
         on roles(:app) do
             within release_path do
-                execute :git, 'config --global --add safe.directory /var/www/timetoanswer/repo'
+                execute :sudo, :git, 'config --global --add safe.directory /var/www/timetoanswer/repo'
             end
         end
     end
