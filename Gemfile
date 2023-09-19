@@ -80,7 +80,7 @@ group :production do
   gem 'mysql2' # , '~> 0.3.18'
 
   # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
-  # gem "unicorn", '<= 5.5.1'
+  gem "unicorn", '<= 5.5.1'
 end
 
 

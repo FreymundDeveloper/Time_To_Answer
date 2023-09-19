@@ -27,7 +27,7 @@ set :log_level, :debug
 # set :pty, true
 
 # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
-#after 'deploy:finished', 'deploy:restart'
+after 'deploy:finished', 'deploy:restart'
 
 namespace :deploy do
     desc 'Install Node.js dependencies'
@@ -40,11 +40,11 @@ namespace :deploy do
     end
 
     # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
-    #desc 'Restart Unicorn'
-    #task :restart do
-    #    invoke 'unicorn:stop'
-    #    invoke 'unicorn:start'
-    #end
+    desc 'Restart Unicorn'
+    task :restart do
+        invoke 'unicorn:stop'
+        invoke 'unicorn:start'
+    end
   
     before 'deploy:assets:precompile', 'deploy:install_node_dependencies'
 end
