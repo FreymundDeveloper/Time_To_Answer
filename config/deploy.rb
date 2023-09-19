@@ -30,17 +30,6 @@ set :log_level, :debug
 after 'deploy:finished', 'deploy:restart'
 
 namespace :deploy do
-    desc 'Set Git safe directory'
-    task :set_git_safe_directory do
-        on roles(:app) do
-            within release_path do
-                execute :git, 'config --add safe.directory /var/www/timetoanswer/repo'
-            end
-        end
-    end
-
-    before 'git:clone', 'deploy:set_git_safe_directory'
-
     desc 'Install Node.js dependencies'
     task :install_node_dependencies do
         on roles(:app) do
