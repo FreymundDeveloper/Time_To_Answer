@@ -65,7 +65,7 @@ group :development do
   gem "capistrano-rails", "~> 1.4", require: false
 
   # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
-  # gem "capistrano3-unicorn"
+  gem "capistrano3-unicorn"
 end
 
 group :test do
