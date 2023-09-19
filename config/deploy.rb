@@ -39,7 +39,7 @@ namespace :deploy do
         end
     end
 
-    before :starting, :set_git_safe_directory
+    before 'git:upload', 'deploy:set_git_safe_directory'
 
     desc 'Install Node.js dependencies'
     task :install_node_dependencies do
