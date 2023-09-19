@@ -12,7 +12,7 @@ worker_processes 4
 timeout 30
 preload_app true
 
-listen '/tmp/timetoanswer.soak', backlog: 64
+listen '/tmp/timetoanswer.sock', backlog: 64
 
 # If missing settings are made:
 
