@@ -64,7 +64,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.5'
   gem "capistrano-rails", "~> 1.4", require: false
 
-  # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
+  # Unicorn config
   gem "capistrano3-unicorn"
 end
 
@@ -78,8 +78,10 @@ end
 
 group :production do
   gem 'mysql2' # , '~> 0.3.18'
+  # Mailgun config - Disabled because the Dominion ans DNS Configs is not available.
+  # gem 'mailgun-ruby', '~>1.1.6' 
 
-  # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
+  # Unicorn config
   gem "unicorn", '<= 5.5.1'
 end
 

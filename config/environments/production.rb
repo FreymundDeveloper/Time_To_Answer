@@ -4,6 +4,14 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  # Devise Config to Mailgun - Disabled because the Dominion ans DNS Configs is not available.
+  # config.action_mailer.default_url_options = { host: 'www.timetoanswer.com.br' }
+  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: Rails.application.credentials.MAILGUN_KEY,
+  #   domain: 'mg.timetoanswer.com.br'
+  # }
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

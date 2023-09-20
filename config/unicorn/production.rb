@@ -1,4 +1,4 @@
-# Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
+# Used to config the Unicorn tool
 
 root = "/var/www/timetoanswer/current"
 working_directory root
@@ -14,11 +14,11 @@ preload_app true
 
 listen '/tmp/timetoanswer.sock', backlog: 64
 
-# If missing settings are made:
+# To make work:
 
-# 1 -> Remove the .example from this file.
+# 1 -> Check the nginx config state(files:"/etc/nginx/nginx.conf" and "/etc/nginx/sites-enabled/default").
 
-# 2 -> All points with the messenger "Unicorn config - Disabled because the Dominion ans DNS Configs is not available." have to be uncomennt.
+# 2 -> Check all points with the message "Unicorn config" are uncommented (Ex: Gemfile and config files).
 
 # 3 -> Run from "vagrant@ubuntu-bionic:/vagrant/time_to_answer$":
 # bundle install

@@ -1,0 +1,10 @@
+# USE TO SEND EMAILS - MAILGUN TOOL
+# Mailgun config - Disabled because the Dominion ans DNS Configs is not available.
+# To activate:
+# 1 -> Insert the API Key(MAILGUN_KEY:) in EDITOR=vim rails credentials:edit
+# 2 -> Remove the .example from this file
+# 3 -> Uncomennt all point white "Mailgun config"
+
+Mailgun.configure do |config|
+    configure.api_key = Rails.application.credentials.MAILGUN_KEY
+end

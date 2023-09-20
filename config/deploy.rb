@@ -26,7 +26,7 @@ set :log_level, :debug
 # Default value for :pty is false
 # set :pty, true
 
-# Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
+# Unicorn config
 after 'deploy:finished', 'deploy:restart'
 
 namespace :deploy do
@@ -39,7 +39,7 @@ namespace :deploy do
         end
     end
 
-    # Unicorn config - Disabled because the Dominion ans DNS Configs is not available.
+    # Unicorn config
     desc 'Restart Unicorn'
     task :restart do
         invoke 'unicorn:stop'
