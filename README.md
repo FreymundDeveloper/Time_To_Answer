@@ -12,4 +12,4 @@ Specifications:
 
 * Front-End: Bootstrap 3.3.7
 
-OBS: Consider the "Unicorn Startup Instructions" commit in case of linking the application to a domain.
+OBS: Consider the "Mailgun and Unicorn Config Tutorial" commit in case of linking the application to a domain.
