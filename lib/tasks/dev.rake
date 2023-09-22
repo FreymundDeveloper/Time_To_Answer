@@ -75,11 +75,20 @@ namespace :dev do
     end
   end
 
-  desc "Reseta o contador de assunstos"
+  desc "Reseta o contador de assuntos"
   task reset_subject_counter: :environment do
     show_spinner("Resetando Contador...") do
       Subject.all.each do |subject|
         Subject.reset_counters(subject.id, :questions)
+      end
+    end
+  end
+
+  desc "Integra os assuntos ao Redis"
+  task add_answers_to_redis: :environment do
+    show_spinner("Vinculando assuntos ao Redis...") do
+      Answer.find_each do |answer|
+        Rails.cache.write(answer.id, "#{answer.question_id}@@#{answer.correct}")
       end
     end
   end
