@@ -46,6 +46,7 @@ gem 'cocoon'
 gem "image_processing", ">= 1.2"
 gem 'font-awesome-rails'
 gem 'prawn-rails'
+gem 'trix'
 
 # Redis Config
 gem 'redis'

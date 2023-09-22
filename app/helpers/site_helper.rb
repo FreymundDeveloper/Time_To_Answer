@@ -4,9 +4,9 @@ module SiteHelper
         when 'index'
             "Last questions registrated..."
         when 'questions'
-            "Results to the search \"#{params[:term]}\"..."
+            "Results to the search \"#{sanitize params[:term]}\"..."
         when 'subject'
-            "Results to the theme \"#{params[:subject]}\"..."   
+            "Results to the theme \"#{sanitize params[:subject]}\"..."   
         end 
     end
 end
