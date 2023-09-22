@@ -47,6 +47,8 @@ gem "image_processing", ">= 1.2"
 gem 'font-awesome-rails'
 gem 'prawn-rails'
 gem 'trix'
+gem 'searchkick'
+gem  'elasticsearch', "< 7.14"
 
 # Redis Config
 gem 'redis'
